@@ -6,7 +6,7 @@
   <title>Quote Generator — DJ C.O.B | THE VOLUME MASTER</title>
   <meta name="description" content="Generate professional quotes for studio sessions, beats and production.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Quote Generator � DJ C.O.B | THE VOLUME MASTER">
+  <meta property="og:title" content="Quote Generator — DJ C.O.B | THE VOLUME MASTER">
   <meta property="og:description" content="Generate professional quotes for studio sessions, beats and production.">
   <meta property="og:image" content="../Assets/img/logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../Assets/css/header-footer.css">
   <link rel="stylesheet" href="../Assets/css/quotes.css">
 </head>
-<body>
+<body><div id="preloader" aria-hidden="true"><div class="pre-inner"><div class="pre-logo"><img src="../Assets/img/logo.jpg" alt="C.O.B"></div><h1 class="pre-name"><span class="p-c">C</span><span class="p-dot">.</span><span class="p-o">O</span><span class="p-dot">.</span><span class="p-b">B</span></h1><p class="pre-sub">THE VOLUME MASTER</p><p class="pre-slogan">Volume Tingz</p><div class="pre-bar"><span></span></div></div></div>
   <div id="site-header"></div>
 
   <main>
@@ -85,6 +85,19 @@
             <div class="tool-actions">
               <button type="submit" class="btn btn-neon">Generate Quote</button>
               <button type="button" class="btn btn-outline" id="printQuote">Print / Save PDF</button>
+              <button type="button" class="btn btn-ghost" id="sendQuote">Send via WhatsApp</button>
+            </div>
+
+            <div class="form-group sig-group">
+              <label>Your Digital Signature</label>
+              <div class="sig-pad-wrap">
+                <canvas id="sigPad" width="520" height="180" aria-label="Draw your digital signature"></canvas>
+                <div class="sig-tools">
+                  <button type="button" class="btn btn-ghost btn-sm" id="sigClear">Clear</button>
+                  <button type="button" class="btn btn-neon btn-sm" id="sigSave">Save Signature</button>
+                </div>
+              </div>
+              <p class="form-hint">Draw your signature with mouse or finger and click <strong>Save</strong>. It will appear on every quote you generate. Sign, then print / save as PDF and send to the artist.</p>
             </div>
           </form>
         </div>
@@ -110,8 +123,9 @@
   <div id="site-footer"></div>
   <div class="toast" id="toast"></div>
 
-    <script src="../Assets/js/global.js"></script>
-<script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/global.js"></script>
+  <script src="../Assets/js/signature.js"></script>
+  <script src="../Assets/js/loader.js"></script>
   <script src="../Assets/js/quotes.js"></script>
 </body>
 </html>

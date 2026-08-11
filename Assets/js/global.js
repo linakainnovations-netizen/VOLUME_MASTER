@@ -58,16 +58,33 @@
     onScroll();
   }
 
+  function preloader() {
+    var el = document.getElementById('preloader');
+    if (!el) return;
+    function hide() {
+      el.classList.add('hide');
+      setTimeout(function () { el.style.display = 'none'; }, 600);
+    }
+    if (document.readyState === 'complete') {
+      setTimeout(hide, 900);
+    } else {
+      window.addEventListener('load', function () { setTimeout(hide, 900); });
+      setTimeout(hide, 3500);
+    }
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       reveal();
       fadeImages();
       backToTop();
+      preloader();
     });
   } else {
     reveal();
     fadeImages();
     backToTop();
+    preloader();
   }
 
   window.VM = window.VM || {};

@@ -34,11 +34,11 @@
   var footerEl = document.getElementById('site-footer');
 
   load('constants/header.html', headerEl, function () {
-    var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    var page = (location.pathname.split('/').pop() || 'main.html').toLowerCase();
     headerEl.querySelectorAll('.nav-link').forEach(function (a) {
       var href = (a.getAttribute('href') || '').toLowerCase();
-      if (page === 'index.html') {
-        if (href === 'index.html') a.classList.add('active');
+      if (page === 'main.html') {
+        if (href === 'main.html') a.classList.add('active');
       } else if (href === page || href === '../' + page) {
         a.classList.add('active');
       }
