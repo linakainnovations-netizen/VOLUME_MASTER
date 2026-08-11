@@ -5,7 +5,6 @@ Official sample website for **DJ C.O.B aka THE VOLUME MASTER** (Music Producer &
 ## Features
 
 - **Home** — Hero with your official logo & trademark slogan, slow-trailing photo gallery, services, featured beats, reviews
-- **Studio Sessions** — Session gallery with filters + "log a session" (saves on device)
 - **Beat Store** — Beat catalog with genre/price filters, lease & exclusive pricing
 - **Booking** — Session/event booking form that sends the request straight to WhatsApp
 - **Contact** — Contact channels + message form (WhatsApp or email)
@@ -17,7 +16,6 @@ Official sample website for **DJ C.O.B aka THE VOLUME MASTER** (Music Producer &
 ```
 ├── index.html                  # Home page
 ├── pages/
-│   ├── studio.html             # Studio sessions
 │   ├── beats.html              # Beat store
 │   ├── booking.html            # Book a session
 │   ├── contact.html            # Contact
@@ -32,8 +30,9 @@ Official sample website for **DJ C.O.B aka THE VOLUME MASTER** (Music Producer &
     └── img/                    # Your images and logo (see Assets/img/README.txt)
 ```
 
-Each page uses its own stylesheet and JavaScript file. The header and footer live in
-`constants/` and are injected automatically by `Assets/js/loader.js`.
+Each page has the header and footer built in, plus its own stylesheet and JavaScript
+file. `Assets/js/loader.js` handles the mobile menu, active-link highlight and year.
+Templates live in `constants/` (used to build/sync every page).
 
 ## Adding your own images
 
@@ -50,8 +49,8 @@ file list. To swap any image, replace the file and keep the same name.
 
 ### Testing locally
 
-Because the site loads the header/footer over HTTP, open it with a local server
-(not by double-clicking the file):
+The site is fully static — you can open it by double-clicking any page, or run a
+local server for a more realistic preview:
 
 ```
 python -m http.server 8080

@@ -2,7 +2,7 @@
   'use strict';
 
   function wireHeader() {
-    var headerEl = document.getElementById('site-header');
+    var headerEl = document.querySelector('.site-header');
     if (!headerEl) return;
 
     var page = (location.pathname.split('/').pop() || 'main.html').toLowerCase();
@@ -17,14 +17,13 @@
 
     var toggle = headerEl.querySelector('.nav-toggle');
     if (toggle) {
-      var header = headerEl.querySelector('.site-header');
       function closeNav() {
-        header.classList.remove('nav-open');
+        headerEl.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('no-scroll');
       }
       toggle.addEventListener('click', function () {
-        var open = header.classList.toggle('nav-open');
+        var open = headerEl.classList.toggle('nav-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.classList.toggle('no-scroll', open);
       });
@@ -42,7 +41,7 @@
   }
 
   function wireFooter() {
-    var footerEl = document.getElementById('site-footer');
+    var footerEl = document.querySelector('.site-footer');
     if (!footerEl) return;
     var yearEl = footerEl.querySelector('#footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
