@@ -74,6 +74,30 @@
     }).join('');
   }
 
+  function heroSlideshow() {
+    var wrap = document.getElementById('heroSlideshow');
+    if (!wrap) return;
+    var images = [
+      { src: 'Assets/img/home.jpeg', alt: 'DJ C.O.B in the studio — THE VOLUME MASTER' },
+      { src: 'Assets/img/home1.jpg', alt: 'Studio session with DJ C.O.B' },
+      { src: 'Assets/img/home2.jpg', alt: 'Recording with THE VOLUME MASTER' },
+      { src: 'Assets/img/home3.jpg', alt: 'Studio vibes — DJ C.O.B' },
+      { src: 'Assets/img/home4.jpg', alt: 'Making hits — THE VOLUME MASTER' }
+    ];
+    wrap.innerHTML = images.map(function (img, i) {
+      return '<img class="hero-slide' + (i === 0 ? ' active' : '') + '" src="' + img.src + '" alt="' + img.alt + '">';
+    }).join('');
+    var current = 0;
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setInterval(function () {
+      var slides = wrap.querySelectorAll('.hero-slide');
+      if (!slides.length) return;
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, reduced ? 8000 : 4000);
+  }
+
   function renderGallery() {
     var track = document.getElementById('galleryMarquee');
     if (!track) return;
@@ -125,5 +149,6 @@
 
   renderSessions();
   renderBeats();
+  heroSlideshow();
   animateStats();
 })();

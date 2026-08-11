@@ -387,6 +387,64 @@ img.fade-img.loaded { opacity: 1; }
 #back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 #back-to-top:hover { background: var(--neon); color: #fff; }
 
+/* ---------- Password gate ---------- */
+#authGate {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(600px 380px at 50% 15%, rgba(168, 85, 247, 0.2), transparent 60%),
+    radial-gradient(500px 320px at 85% 90%, rgba(34, 211, 238, 0.12), transparent 55%),
+    #0a0a12;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#authGate.hide { opacity: 0; visibility: hidden; }
+.gate-box {
+  width: min(380px, 90vw);
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--neon);
+  border-radius: 18px;
+  padding: 36px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.18);
+}
+.gate-box img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--neon);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.6);
+  margin: 0 auto 16px;
+}
+.gate-box h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.gate-box p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+.gate-box input { text-align: center; margin-bottom: 12px; }
+.gate-box .btn { width: 100%; }
+.gate-err {
+  display: none;
+  color: var(--danger);
+  font-size: 0.82rem;
+  margin-top: 12px;
+}
+.gate-tag {
+  margin-top: 16px;
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ---------- Focus & reduced motion ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--neon-2);

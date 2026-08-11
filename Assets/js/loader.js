@@ -1,39 +1,10 @@
 (function () {
   'use strict';
 
-  var inPages = location.pathname.indexOf('/pages/') !== -1;
-  var pre = inPages ? '../' : '';
+  function wireHeader() {
+    var headerEl = document.getElementById('site-header');
+    if (!headerEl) return;
 
-  function rewritePaths(root) {
-    if (inPages) return;
-    var refs = root.querySelectorAll('[href^="../"], [src^="../"]');
-    Array.prototype.forEach.call(refs, function (el) {
-      ['href', 'src'].forEach(function (attr) {
-        if (el.getAttribute(attr) && el.getAttribute(attr).indexOf('../') === 0) {
-          el.setAttribute(attr, el.getAttribute(attr).slice(3));
-        }
-      });
-    });
-  }
-
-  function load(url, el, done) {
-    if (!el) return;
-    fetch(pre + url)
-      .then(function (res) { return res.text(); })
-      .then(function (html) {
-        el.innerHTML = html;
-        rewritePaths(el);
-        if (done) done();
-      })
-      .catch(function () {
-        el.innerHTML = '<div class="load-error">Could not load component.</div>';
-      });
-  }
-
-  var headerEl = document.getElementById('site-header');
-  var footerEl = document.getElementById('site-footer');
-
-  load('constants/header.html', headerEl, function () {
     var page = (location.pathname.split('/').pop() || 'main.html').toLowerCase();
     headerEl.querySelectorAll('.nav-link').forEach(function (a) {
       var href = (a.getAttribute('href') || '').toLowerCase();
@@ -43,6 +14,7 @@
         a.classList.add('active');
       }
     });
+
     var toggle = headerEl.querySelector('.nav-toggle');
     if (toggle) {
       var header = headerEl.querySelector('.site-header');
@@ -67,10 +39,22 @@
         if (e.key === 'Escape') closeNav();
       });
     }
-  });
+  }
 
-  load('constants/footer.html', footerEl, function () {
+  function wireFooter() {
+    var footerEl = document.getElementById('site-footer');
+    if (!footerEl) return;
     var yearEl = footerEl.querySelector('#footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      wireHeader();
+      wireFooter();
+    });
+  } else {
+    wireHeader();
+    wireFooter();
+  }
 })();

@@ -18,7 +18,41 @@
   <link rel="stylesheet" href="Assets/css/home.css">
 </head>
 <body><div id="preloader" aria-hidden="true"><div class="pre-inner"><div class="pre-logo"><img src="Assets/img/logo.jpg" alt="C.O.B"></div><h1 class="pre-name"><span class="p-c">C</span><span class="p-dot">.</span><span class="p-o">O</span><span class="p-dot">.</span><span class="p-b">B</span></h1><div class="pre-loader" aria-hidden="true"></div><p class="pre-slogan">Volume Tingz</p></div></div>
-  <div id="site-header"></div>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="main.html" class="brand">
+      <img src="Assets/img/logo.jpg" alt="DJ C.O.B Logo" class="brand-logo">
+      <span class="brand-text">THE VOLUME MASTER</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <div class="nav-backdrop"></div>
+      <div class="nav-sheet">
+        <button class="nav-close" aria-label="Close menu">&times;</button>
+        <div class="nav-sheet-brand">
+          <img src="Assets/img/logo.jpg" alt="C.O.B">
+          <div>
+            <span>THE VOLUME MASTER</span>
+            <em>Volume Tingz</em>
+          </div>
+        </div>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="main.html">Home</a></li>
+          <li><a class="nav-link" href="pages/about.html">About</a></li>
+          <li><a class="nav-link" href="pages/studio.html">Studio</a></li>
+          <li><a class="nav-link" href="pages/beats.html">Beats</a></li>
+          <li><a class="nav-link" href="pages/booking.html">Booking</a></li>
+          <li><a class="nav-link" href="pages/contact.html">Contact</a></li>
+          <li><a class="nav-link" href="pages/quotes.html">Quotes</a></li>
+          <li><a class="nav-link" href="pages/receipts.html">Receipts</a></li>
+          <li><a class="nav-link nav-cta" href="https://wa.me/260975047925" target="_blank" rel="noopener">Book Me</a></li>
+        </ul>
+        <p class="nav-sheet-tag">"Gimme the volume, gimme the volume"</p>
+      </div>
+    </nav>
+  </div>
+</header>
+
 
   <main>
     <section class="hero">
@@ -39,9 +73,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo">
-            <img src="Assets/img/home.jpeg" alt="DJ C.O.B in the studio — THE VOLUME MASTER">
-          </div>
+          <div class="hero-photo" id="heroSlideshow" aria-label="Studio photo slideshow"></div>
           <div class="eq">
             <span style="--d:0s"></span><span style="--d:.1s"></span><span style="--d:.2s"></span>
             <span style="--d:.3s"></span><span style="--d:.4s"></span><span style="--d:.5s"></span>
@@ -174,7 +206,58 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">
+        <img src="Assets/img/logo.jpg" alt="DJ C.O.B Logo" class="footer-logo">
+        <h3>THE VOLUME MASTER</h3>
+      </div>
+      <p>DJ C.O.B &middot; Music Producer &amp; DJ. Turning studio sessions into hits.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="main.html">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/studio.html">Studio Sessions</a></li>
+        <li><a href="pages/beats.html">Beat Store</a></li>
+        <li><a href="pages/booking.html">Book a Session</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+        <li><a href="pages/quotes.html">Request a Quote</a></li>
+        <li><a href="pages/receipts.html">Generate Receipt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+260975047925">+260 975 047 925</a></li>
+        <li><a href="mailto:Djcobzambia@gmail.com">Djcobzambia@gmail.com</a></li>
+        <li><a href="https://instagram.com/djcob_zambia" target="_blank" rel="noopener">@djcob_zambia</a></li>
+      </ul>
+      <h4 style="margin-top:18px;">Follow</h4>
+      <ul class="footer-social">
+        <li><a href="https://instagram.com/djcob_zambia" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#" onclick="alert('Add your YouTube link here');return false;">YouTube</a></li>
+        <li><a href="#" onclick="alert('Add your TikTok link here');return false;">TikTok</a></li>
+        <li><a href="https://wa.me/260975047925" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-map">
+    <iframe
+      title="THE VOLUME MASTER — studio location map"
+      src="https://www.google.com/maps?q=Lusaka%2C%20Zambia&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen></iframe>
+  </div>
+  <div class="footer-bottom">
+    <p>"Gimme the volume, gimme the volume" &middot; Volume Tingz</p>
+    <p>&copy; <span id="footer-year"></span> DJ C.O.B &mdash; THE VOLUME MASTER. All rights reserved.</p>
+  </div>
+</footer>
+
   <div class="toast" id="toast"></div>
 
     <script src="Assets/js/global.js"></script>
