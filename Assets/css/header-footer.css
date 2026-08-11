@@ -66,8 +66,7 @@ input:focus, select:focus, textarea:focus {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 10, 18, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 18, 0.94);
   border-bottom: 1px solid var(--border);
 }
 .header-inner {
@@ -496,8 +495,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     position: fixed;
     inset: 0;
     z-index: 99;
-    background: rgba(5, 5, 12, 0.65);
-    backdrop-filter: blur(3px);
+    background: rgba(5, 5, 12, 0.72);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -575,22 +573,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     align-items: stretch;
     gap: 0;
   }
-  .nav-list li {
-    opacity: 0;
-    transform: translateY(24px);
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-list li {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .site-header.nav-open .nav-list li {
+      animation: sheetItem 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+    }
+    .site-header.nav-open .nav-list li:nth-child(1) { animation-delay: 0.06s; }
+    .site-header.nav-open .nav-list li:nth-child(2) { animation-delay: 0.11s; }
+    .site-header.nav-open .nav-list li:nth-child(3) { animation-delay: 0.16s; }
+    .site-header.nav-open .nav-list li:nth-child(4) { animation-delay: 0.21s; }
+    .site-header.nav-open .nav-list li:nth-child(5) { animation-delay: 0.26s; }
+    .site-header.nav-open .nav-list li:nth-child(6) { animation-delay: 0.31s; }
+    .site-header.nav-open .nav-list li:nth-child(7) { animation-delay: 0.36s; }
+    .site-header.nav-open .nav-list li:nth-child(8) { animation-delay: 0.41s; }
+    .site-header.nav-open .nav-list li:nth-child(9) { animation-delay: 0.46s; }
   }
-  .site-header.nav-open .nav-list li {
-    animation: sheetItem 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
-  }
-  .site-header.nav-open .nav-list li:nth-child(1) { animation-delay: 0.06s; }
-  .site-header.nav-open .nav-list li:nth-child(2) { animation-delay: 0.11s; }
-  .site-header.nav-open .nav-list li:nth-child(3) { animation-delay: 0.16s; }
-  .site-header.nav-open .nav-list li:nth-child(4) { animation-delay: 0.21s; }
-  .site-header.nav-open .nav-list li:nth-child(5) { animation-delay: 0.26s; }
-  .site-header.nav-open .nav-list li:nth-child(6) { animation-delay: 0.31s; }
-  .site-header.nav-open .nav-list li:nth-child(7) { animation-delay: 0.36s; }
-  .site-header.nav-open .nav-list li:nth-child(8) { animation-delay: 0.41s; }
-  .site-header.nav-open .nav-list li:nth-child(9) { animation-delay: 0.46s; }
   @keyframes sheetItem {
     to { opacity: 1; transform: translateY(0); }
   }
