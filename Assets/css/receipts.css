@@ -195,7 +195,7 @@
   .form-row { grid-template-columns: 1fr; }
 }
 
-@media print {
+@media print {`n  #authGate { display: none !important; }
   body { background: #fff; }
   #site-header, #site-footer, .page-head, .tool-panel:first-of-type,
   .section-alt, .toast, .tool-panel .panel-title {
