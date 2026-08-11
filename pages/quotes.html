@@ -208,9 +208,22 @@
 
   <div class="toast" id="toast"></div>
 
+  <div id="authGate">
+    <div class="gate-box">
+      <img src="../Assets/img/logo.jpg" alt="THE VOLUME MASTER">
+      <h2>Private Studio Tools</h2>
+      <p>Enter the password to open the quote generator.</p>
+      <input type="password" id="authPass" placeholder="Password" autocomplete="off">
+      <button type="button" class="btn btn-neon" id="authBtn">Unlock</button>
+      <p class="gate-err" id="authErr">Wrong password. Try again.</p>
+      <p class="gate-tag">Volume Tingz</p>
+    </div>
+  </div>
+
   <script src="../Assets/js/global.js"></script>
   <script src="../Assets/js/signature.js"></script>
   <script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/gate.js"></script>
   <script src="../Assets/js/quotes.js"></script>
 </body>
 </html>
