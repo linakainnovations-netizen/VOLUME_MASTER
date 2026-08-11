@@ -54,6 +54,29 @@
 
 .tool-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
 
+/* Signature pad */
+.sig-group { margin-top: 20px; }
+.sig-pad-wrap {
+  background: #fff;
+  border: 2px dashed var(--neon);
+  border-radius: 10px;
+  padding: 10px;
+}
+.sig-pad-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+.sig-tools {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.form-hint { font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
+
 /* Document sheet */
 .doc-panel { position: sticky; top: 84px; }
 .doc-sheet {
@@ -144,6 +167,14 @@
 }
 .doc-contact { text-align: right; }
 .doc-sign { margin-top: 40px; text-align: center; }
+.doc-sign-img {
+  height: 90px;
+  max-width: 240px;
+  margin: 0 auto 6px;
+  object-fit: contain;
+  border-bottom: 2px solid #1a1a2e;
+  padding-bottom: 4px;
+}
 .doc-sign .sig-line { border-top: 1px dashed #999; width: 220px; margin: 0 auto 6px; }
 .doc-sign .sig-label { font-size: 0.75rem; color: #888; }
 

@@ -27,6 +27,20 @@
   color: var(--neon-2);
   text-transform: uppercase;
   margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tingz-badge {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--gold);
+  border: 1px solid rgba(245, 197, 66, 0.5);
+  background: rgba(245, 197, 66, 0.08);
+  padding: 5px 14px;
+  border-radius: 999px;
 }
 .hero-title {
   font-size: clamp(2.8rem, 8vw, 5.2rem);

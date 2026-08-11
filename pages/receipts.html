@@ -89,6 +89,19 @@
             <div class="tool-actions">
               <button type="submit" class="btn btn-neon">Generate Receipt</button>
               <button type="button" class="btn btn-outline" id="printReceipt">Print / Save PDF</button>
+              <button type="button" class="btn btn-ghost" id="sendReceipt">Send via WhatsApp</button>
+            </div>
+
+            <div class="form-group sig-group">
+              <label>Your Digital Signature</label>
+              <div class="sig-pad-wrap">
+                <canvas id="sigPad" width="520" height="180" aria-label="Draw your digital signature"></canvas>
+                <div class="sig-tools">
+                  <button type="button" class="btn btn-ghost btn-sm" id="sigClear">Clear</button>
+                  <button type="button" class="btn btn-neon btn-sm" id="sigSave">Save Signature</button>
+                </div>
+              </div>
+              <p class="form-hint">Draw your signature with mouse or finger and click <strong>Save</strong>. It will appear on every receipt you generate. Sign, then print / save as PDF and send to the artist.</p>
             </div>
           </form>
         </div>
@@ -114,8 +127,9 @@
   <div id="site-footer"></div>
   <div class="toast" id="toast"></div>
 
-    <script src="../Assets/js/global.js"></script>
-<script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/global.js"></script>
+  <script src="../Assets/js/signature.js"></script>
+  <script src="../Assets/js/loader.js"></script>
   <script src="../Assets/js/receipts.js"></script>
 </body>
 </html>

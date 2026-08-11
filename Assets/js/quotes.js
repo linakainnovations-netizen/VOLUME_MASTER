@@ -139,6 +139,11 @@
       ? '<p class="doc-notes"><strong>Notes:</strong> ' + data.notes.replace(/</g, '&lt;') + '</p>'
       : '';
 
+    var sig = window.VM && window.VM.signature ? window.VM.signature.get() : null;
+    var sigHtml = sig
+      ? '<div class="doc-sign"><img class="doc-sign-img" src="' + sig + '" alt="Digital signature of THE VOLUME MASTER"><div class="sig-label">Signature of THE VOLUME MASTER</div></div>'
+      : '<div class="doc-sign"><div class="sig-line"></div><div class="sig-label">Sign &mdash; use the signature pad on the left</div></div>';
+
     var contactHtml = data.contact
       ? '<td colspan="2"><strong>Client:</strong> ' + data.client + ' &middot; ' + data.contact.replace(/</g, '&lt;') + '</td>'
       : '<td colspan="2"><strong>Client:</strong> ' + data.client + '</td>';
@@ -158,7 +163,7 @@
       '    <div>Zambia</div>' +
       '  </div>' +
       '</div>' +
-      '<div class="doc-sign"><div class="sig-line"></div><div class="sig-label">Authorized Signature</div></div>';
+      sigHtml;
   }
 
   function render() {
@@ -215,6 +220,30 @@
   document.getElementById('printQuote').addEventListener('click', function () {
     window.print();
   });
+  document.getElementById('sendQuote').addEventListener('click', function () {
+    var data = collectData();
+    var t = computeTotals(data.items, data.discount, data.tax);
+    var msg = encodeURIComponent(
+      '*QUOTE FROM THE VOLUME MASTER*' + '\n' +
+      'Quote: ' + data.number + '\n' +
+      'For: ' + data.client + '\n' +
+      'Date: ' + data.date + '\n' +
+      'Total: ' + money(t.total) + '\n\n' +
+      'Full quote attached in the document above. Please review and confirm.' + '\n' +
+      '"Gimme the volume, gimme the volume"'
+    );
+    window.open('https://wa.me/260975047925?text=' + msg, '_blank');
+    toast('Opening WhatsApp with the quote summary');
+  });
+
+  if (window.VM && window.VM.signature) {
+    window.VM.signature.init(
+      document.getElementById('sigPad'),
+      document.getElementById('sigClear'),
+      document.getElementById('sigSave'),
+      toast
+    );
+  }
 
   renderHistory([]);
   try {

@@ -44,11 +44,27 @@
       }
     });
     var toggle = headerEl.querySelector('.nav-toggle');
-    var list = headerEl.querySelector('.nav-list');
-    if (toggle && list) {
+    if (toggle) {
+      var header = headerEl.querySelector('.site-header');
+      function closeNav() {
+        header.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      }
       toggle.addEventListener('click', function () {
-        var open = list.classList.toggle('open');
+        var open = header.classList.toggle('nav-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('no-scroll', open);
+      });
+      var backdrop = headerEl.querySelector('.nav-backdrop');
+      var closeBtn = headerEl.querySelector('.nav-close');
+      if (backdrop) backdrop.addEventListener('click', closeNav);
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      headerEl.querySelectorAll('.nav-link').forEach(function (a) {
+        a.addEventListener('click', closeNav);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeNav();
       });
     }
   });
