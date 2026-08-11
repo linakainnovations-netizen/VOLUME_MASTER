@@ -66,10 +66,10 @@
       setTimeout(function () { el.style.display = 'none'; }, 600);
     }
     if (document.readyState === 'complete') {
-      setTimeout(hide, 900);
+      setTimeout(hide, 300);
     } else {
-      window.addEventListener('load', function () { setTimeout(hide, 900); });
-      setTimeout(hide, 3500);
+      window.addEventListener('load', function () { setTimeout(hide, 300); });
+      setTimeout(hide, 2200);
     }
   }
 

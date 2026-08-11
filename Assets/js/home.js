@@ -85,7 +85,8 @@
       { src: 'Assets/img/home4.jpg', alt: 'Making hits — THE VOLUME MASTER' }
     ];
     wrap.innerHTML = images.map(function (img, i) {
-      return '<img class="hero-slide' + (i === 0 ? ' active' : '') + '" src="' + img.src + '" alt="' + img.alt + '">';
+      var attrs = i === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
+      return '<img class="hero-slide' + (i === 0 ? ' active' : '') + '" src="' + img.src + '" alt="' + img.alt + '"' + attrs + '>';
     }).join('');
     var current = 0;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
