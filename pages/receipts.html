@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt Generator — DJ C.O.B | THE VOLUME MASTER</title>
+  <meta name="description" content="Generate professional, printable receipts for clients and artists.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Receipt Generator � DJ C.O.B | THE VOLUME MASTER">
+  <meta property="og:description" content="Generate professional, printable receipts for clients and artists.">
+  <meta property="og:image" content="../Assets/img/logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../Assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Assets/css/header-footer.css">
+  <link rel="stylesheet" href="../Assets/css/receipts.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="section-tag">Business Tools</span>
+        <h1 class="section-title">Receipt Generator</h1>
+        <p class="section-sub">Issue a clean, printable receipt after every payment — perfect for artists, labels and clients.</p>
+      </div>
+    </section>
+
+    <section class="section section-tools">
+      <div class="container tools-wrap">
+        <div class="tool-panel">
+          <h2 class="panel-title">Payment Details</h2>
+          <form id="receiptForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rNumber">Receipt Number</label>
+                <input type="text" id="rNumber" readonly>
+              </div>
+              <div class="form-group">
+                <label for="rDate">Date</label>
+                <input type="date" id="rDate" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rClient">Received From (Client)</label>
+                <input type="text" id="rClient" placeholder="e.g. Mwansa &amp; Co." required>
+              </div>
+              <div class="form-group">
+                <label for="rAmount">Amount Paid (K)</label>
+                <input type="number" id="rAmount" min="0" step="0.01" placeholder="e.g. 500" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rMethod">Payment Method</label>
+                <select id="rMethod">
+                  <option value="Cash">Cash</option>
+                  <option value="Bank Transfer">Bank Transfer</option>
+                  <option value="Mobile Money">Mobile Money</option>
+                  <option value="Card">Card</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="rService">Payment For</label>
+                <select id="rService">
+                  <option value="Studio Session">Studio Session</option>
+                  <option value="Beat Lease">Beat Lease</option>
+                  <option value="Exclusive Beat Rights">Exclusive Beat Rights</option>
+                  <option value="Mixing &amp; Mastering">Mixing &amp; Mastering</option>
+                  <option value="Production">Production</option>
+                  <option value="Event / DJ Booking">Event / DJ Booking</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rNotes">Notes (optional)</label>
+              <input type="text" id="rNotes" placeholder="e.g. Balance of K200 still due">
+            </div>
+            <div class="form-group">
+              <label for="rBalance">Balance Due (K, optional)</label>
+              <input type="number" id="rBalance" min="0" step="0.01" placeholder="0 = fully paid">
+            </div>
+
+            <div class="tool-actions">
+              <button type="submit" class="btn btn-neon">Generate Receipt</button>
+              <button type="button" class="btn btn-outline" id="printReceipt">Print / Save PDF</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="tool-panel doc-panel">
+          <h2 class="panel-title">Preview</h2>
+          <div class="doc-sheet" id="receiptDoc">
+            <div class="doc-placeholder">Fill in the payment details and hit <strong>Generate Receipt</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <span class="section-tag">History</span>
+        <h2 class="section-title">Recent Receipts</h2>
+        <div class="history-list" id="receiptHistory"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div class="toast" id="toast"></div>
+
+    <script src="../Assets/js/global.js"></script>
+<script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/receipts.js"></script>
+</body>
+</html>

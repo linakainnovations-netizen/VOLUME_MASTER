@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session â€” DJ C.O.B | THE VOLUME MASTER</title>
+  <meta name="description" content="Book a studio session, event or custom beat with DJ C.O.B â€” THE VOLUME MASTER.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book a Session — DJ C.O.B | THE VOLUME MASTER">
+  <meta property="og:description" content="Book a studio session, event or custom beat with DJ C.O.B — THE VOLUME MASTER.">
+  <meta property="og:image" content="../Assets/img/booking.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../Assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Assets/css/header-footer.css">
+  <link rel="stylesheet" href="../Assets/css/booking.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="section-tag">Bookings</span>
+        <h1 class="section-title">Book a Session</h1>
+        <p class="section-sub">Lock in your studio time, event or custom beat. Fill the form and your booking comes straight to my WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section section-booking">
+      <div class="container booking-wrap">
+        <div class="booking-visual">
+          <img src="../Assets/img/booking.jpeg" alt="Book a session with DJ C.O.B">
+          <div class="booking-info">
+            <h3>Session Packages</h3>
+            <ul>
+              <li><span>Studio Session</span><strong>K250 / hr</strong></li>
+              <li><span>Beat Lease</span><strong>from K150</strong></li>
+              <li><span>Exclusive Beat</span><strong>from K600</strong></li>
+              <li><span>Mix &amp; Master</span><strong>K350 / track</strong></li>
+              <li><span>Event / DJ Booking</span><strong>Custom</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tool-panel">
+          <h2 class="panel-title">Booking Details</h2>
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bName">Your Name</label>
+                <input type="text" id="bName" placeholder="e.g. Mwansa" required>
+              </div>
+              <div class="form-group">
+                <label for="bContact">Phone / WhatsApp</label>
+                <input type="text" id="bContact" placeholder="e.g. 097 000 0000" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bService">What do you need?</label>
+              <select id="bService">
+                <option value="Studio Session">Studio Session</option>
+                <option value="Beat Lease">Beat Lease</option>
+                <option value="Exclusive Beat">Exclusive Beat</option>
+                <option value="Mix &amp; Mastering">Mix &amp; Mastering</option>
+                <option value="Custom Beat">Custom Beat</option>
+                <option value="Event / DJ Booking">Event / DJ Booking</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bDate">Preferred Date</label>
+                <input type="date" id="bDate">
+              </div>
+              <div class="form-group">
+                <label for="bTime">Time (optional)</label>
+                <input type="time" id="bTime">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bNotes">Details</label>
+              <textarea id="bNotes" rows="3" placeholder="Tell me about your project, track list, event type..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-neon btn-block">Send Booking via WhatsApp</button>
+            <p class="form-hint">You'll be redirected to WhatsApp with your booking details pre-filled â€” just hit send.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div class="toast" id="toast"></div>
+
+    <script src="../Assets/js/global.js"></script>
+<script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/booking.js"></script>
+</body>
+</html>

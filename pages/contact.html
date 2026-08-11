@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — DJ C.O.B | THE VOLUME MASTER</title>
+  <meta name="description" content="Get in touch with DJ C.O.B — THE VOLUME MASTER. Music production, DJ bookings and studio sessions.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact � DJ C.O.B | THE VOLUME MASTER">
+  <meta property="og:description" content="Get in touch with DJ C.O.B � THE VOLUME MASTER.">
+  <meta property="og:image" content="../Assets/img/contact_us.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../Assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Assets/css/header-footer.css">
+  <link rel="stylesheet" href="../Assets/css/contact.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="section-tag">Contact</span>
+        <h1 class="section-title">Let's Talk Music</h1>
+        <p class="section-sub">Booking, collaborations, beats or just saying hi — reach out on any channel.</p>
+      </div>
+    </section>
+
+    <section class="section section-contact">
+      <div class="container contact-wrap">
+        <div class="contact-info">
+          <img src="../Assets/img/contact_us.jpeg" alt="Contact DJ C.O.B — THE VOLUME MASTER">
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+260975047925">
+              <span class="cc-icon">&#9742;</span>
+              <span><strong>Call / WhatsApp</strong><br>+260 975 047 925</span>
+            </a>
+            <a class="contact-card" href="mailto:Djcobzambia@gmail.com">
+              <span class="cc-icon">&#9993;</span>
+              <span><strong>Email</strong><br>Djcobzambia@gmail.com</span>
+            </a>
+            <a class="contact-card" href="https://instagram.com/djcob_zambia" target="_blank" rel="noopener">
+              <span class="cc-icon">&#128247;</span>
+              <span><strong>Instagram</strong><br>@djcob_zambia</span>
+            </a>
+            <a class="contact-card" href="https://wa.me/260975047925" target="_blank" rel="noopener">
+              <span class="cc-icon">&#128172;</span>
+              <span><strong>WhatsApp Me</strong><br>Fast reply guaranteed</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-panel">
+          <h2 class="panel-title">Send a Message</h2>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cName">Your Name</label>
+                <input type="text" id="cName" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="cContact">Phone / WhatsApp</label>
+                <input type="text" id="cContact" placeholder="Your number">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cSubject">Subject</label>
+              <input type="text" id="cSubject" placeholder="e.g. Studio booking, beat inquiry..." required>
+            </div>
+            <div class="form-group">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <div class="tool-actions">
+              <button type="submit" class="btn btn-neon">Send via WhatsApp</button>
+              <button type="button" class="btn btn-outline" id="emailBtn">Send via Email</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div class="toast" id="toast"></div>
+
+    <script src="../Assets/js/global.js"></script>
+<script src="../Assets/js/loader.js"></script>
+  <script src="../Assets/js/contact.js"></script>
+</body>
+</html>
