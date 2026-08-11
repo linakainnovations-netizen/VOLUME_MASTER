@@ -78,6 +78,7 @@
     var track = document.getElementById('galleryMarquee');
     if (!track) return;
     var items = [
+      { img: 'Assets/img/home.jpeg', cap: 'The Studio' },
       { img: 'Assets/img/home1.jpg', cap: 'In the Studio' },
       { img: 'Assets/img/home2.jpg', cap: 'Session Time' },
       { img: 'Assets/img/home3.jpg', cap: 'Studio Vibes' },

@@ -325,6 +325,36 @@ body.no-scroll { overflow: hidden; }
   0% { transform: translateX(-120%); }
   100% { transform: translateX(320%); }
 }
+.pre-loader {
+  font-weight: 900;
+  font-family: var(--font-head);
+  font-size: clamp(1.1rem, 4.5vw, 1.9rem);
+  line-height: 1.2em;
+  display: inline-grid;
+  letter-spacing: 4px;
+  margin-top: 22px;
+}
+.pre-loader::before,
+.pre-loader::after {
+  content: "VOLUME MASTER";
+  grid-area: 1/1;
+  -webkit-mask: linear-gradient(90deg, #000 50%, #0000 0) 0 50%/2ch 100%;
+  mask: linear-gradient(90deg, #000 50%, #0000 0) 0 50%/2ch 100%;
+  color: #0000;
+  text-shadow: 0 0 0 var(--neon), 0 calc(var(--s, 1) * 1.2em) 0 var(--neon);
+  animation: prel15 1s infinite;
+}
+.pre-loader::after {
+  -webkit-mask-position: 1ch 50%;
+  mask-position: 1ch 50%;
+  --s: -1;
+  text-shadow: 0 0 0 var(--neon-2), 0 calc(var(--s, 1) * -1.2em) 0 var(--neon-2);
+}
+@keyframes prel15 {
+  80%, 100% {
+    text-shadow: 0 calc(var(--s, 1) * -1.2em) 0 var(--neon), 0 0 0 var(--neon);
+  }
+}
 
 /* ---------- Scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
