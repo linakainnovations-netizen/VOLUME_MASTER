@@ -206,9 +206,10 @@
 }
 
 /* Print: only the document */
-@media print {`n  #authGate { display: none !important; }
+@media print {
+  #authGate { display: none !important; }
   body { background: #fff; }
-  #site-header, #site-footer, .page-head, .tool-panel:first-of-type,
+  .site-header, .site-footer, .page-head, .tool-panel:first-of-type,
   .section-alt, .toast, .tool-panel .panel-title {
     display: none !important;
   }

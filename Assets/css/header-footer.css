@@ -444,6 +444,14 @@ img.fade-img.loaded { opacity: 1; }
   text-transform: uppercase;
   color: var(--muted);
 }
+.gate-back {
+  display: block;
+  margin-top: 14px;
+  color: var(--neon);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+.gate-back:hover { text-decoration: underline; }
 
 /* ---------- Focus & reduced motion ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
